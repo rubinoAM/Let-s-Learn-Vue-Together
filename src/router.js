@@ -27,6 +27,7 @@ const router = new VueRouter({
         // checking for item in local storage / user auth
         if (localStorage.getItem('username') !== null) {
           // route to proper authenticated pages if this value isn't null
+          // you would probably use bcrypt to really check this
           next('/app');
         } else {
           // continue to directed route of ""
@@ -60,7 +61,7 @@ const router = new VueRouter({
         if (localStorage.getItem('username') !== null) {
           next();
         } else {
-          next('/notauthorized');
+          next('/notauthenticated');
         }
       },
       children: [
@@ -93,7 +94,7 @@ const router = new VueRouter({
       ],
     },
     {
-      path: '/notauthorized',
+      path: '/notauthenticated',
       component: NotAuthorizedPage,
     },
     {
@@ -102,11 +103,5 @@ const router = new VueRouter({
     },
   ],
 });
-
-// router.beforeEach(() => {
-//   if (localStorage.getItem('username') === null) {
-//     console.log('this is atest guard');
-//   }
-// });
 
 export default router;
