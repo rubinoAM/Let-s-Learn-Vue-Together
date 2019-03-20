@@ -1,26 +1,13 @@
-# rooter_bookstore.web
+# Rooter Bookstore
+
+Rooter Bookstore is an application that demonstrates the power and capabilities of the Vue Router library
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Run the app
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm start
 ```
