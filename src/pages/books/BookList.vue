@@ -1,37 +1,21 @@
 <template>
   <div class="book-list">
-    <Book v-for="book in books" :key="book.id"/>
+    <BookListItem v-for="book in books" :key="book.id" :book="book"/>
   </div>
 </template>
 
 <script>
-  import Book from './Book';
+  import BookListItem from './BookListItem';
+  import books from '../../assets/books.js';
 
   export default {
     name: 'BookList',
     components: {
-      Book
+      BookListItem,
     },
     data() {
       return {
-        books: [
-          {
-            id: 1,
-            name: 'JavaScript 1'
-          },
-          {
-            id: 2,
-            name: 'JavaScript 1'
-          },
-          {
-            id: 3,
-            name: 'JavaScript 1'
-          },
-          {
-            id: 4,
-            name: 'JavaScript 1'
-          }
-        ]
+        books: books,
       };
     }
   };

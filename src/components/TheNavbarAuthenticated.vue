@@ -1,21 +1,20 @@
 <template>
   <nav class="navbar">
-    <span class="navbar-brand">ROOTER BOOKSTORE</span>
+    <router-link to="/app">
+      <span class="navbar-brand">ROOTER BOOKSTORE</span>
+    </router-link>
     <ul>
       <li>
-        <RouterLink to="/pricing">PRICING</RouterLink>
+        <router-link to="/app/profile">PROFILE</router-link>
       </li>
-      <li v-if="isAuthenticated">
-        <RouterLink to="/books">BOOKS</RouterLink>
+      <li>
+        <router-link to="/app/books">BOOKS</router-link>
       </li>
-      <li v-if="isAuthenticated">
+      <li>
+        <router-link to="/app/upgrade"><i>UPGRADE</i></router-link>
+      </li>
+      <li>
         <button class="btn btn-primary" @click="logout()">LOGOUT</button>
-      </li>
-      <li v-if="!isAuthenticated">
-        <RouterLink to="/contact">CONTACT US</RouterLink>
-      </li>
-      <li v-if="!isAuthenticated">
-        <RouterLink to="/login">LOGIN</RouterLink>
       </li>
     </ul>
   </nav>
@@ -23,15 +22,7 @@
 
 <script>
   export default {
-    name: 'TheNavbar',
-    computed: {
-      isAuthenticated() {
-        if (localStorage.getItem('username') !== null) {
-          return true;
-        }
-        return false;
-      },
-    },
+    name: 'TheNavbarAuthenticated',
     methods: {
       logout() {
         localStorage.removeItem('username');
@@ -49,6 +40,7 @@
     color: #fff;
     display: grid;
     grid-template-columns: 20% auto;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
   }
 
   .navbar span {
@@ -68,7 +60,8 @@
     margin-right: 20px;
   }
 
-  .navbar ul li a {
+  .navbar ul li a,
+  .navbar a {
     color: #ebebeb;
     text-decoration: none;
   }

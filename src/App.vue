@@ -1,18 +1,12 @@
 <template>
   <div id="app">
-    <TheNavbar/>
-    <RouterView/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import TheNavbar from "./components/TheNavbar";
-
   export default {
     name: "app",
-    components: {
-      TheNavbar
-    }
   };
 </script>
 
@@ -21,8 +15,6 @@
     font-family: "Questrial", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 7% auto;
+    height: 100vh;
   }
 </style>

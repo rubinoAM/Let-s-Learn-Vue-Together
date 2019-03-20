@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'Login',
+  name: 'LoginPage',
   data() {
     return {
       username: '',
@@ -23,7 +23,7 @@ export default {
   methods: {
     login() {
       localStorage.setItem('username', this.username);
-      this.$router.push('/books');
+      this.$router.push('/app');
     },
   },
 }
