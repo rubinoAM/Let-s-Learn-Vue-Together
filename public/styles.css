@@ -4,3 +4,11 @@ body {
   font-family: 'Questrial', sans-serif;
   background-color: #fafafa;
 }
+
+h1, h2, h3, h4, h5, h6, a {
+  font-family: 'Questrial', sans-serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}

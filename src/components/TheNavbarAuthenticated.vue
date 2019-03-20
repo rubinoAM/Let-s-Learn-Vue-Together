@@ -1,35 +1,44 @@
 <template>
   <nav class="navbar">
     <router-link to="/app">
+      <i class="material-icons">bookmarks</i>
       <span class="navbar-brand">ROOTER BOOKSTORE</span>
     </router-link>
     <ul>
       <li>
-        <router-link to="/app/profile">PROFILE</router-link>
+        <router-link to="/app/profile">
+          PROFILE
+        </router-link>
       </li>
       <li>
-        <router-link to="/app/books">BOOKS</router-link>
+        <router-link to="/app/books">
+          BOOKS
+        </router-link>
       </li>
       <li>
-        <router-link to="/app/upgrade"><i>UPGRADE</i></router-link>
+        <router-link to="/app/upgrade">
+          <i>UPGRADE</i>
+        </router-link>
       </li>
       <li>
-        <button class="btn btn-primary" @click="logout()">LOGOUT</button>
+        <button class="btn btn-primary" @click="logout()">
+          LOGOUT
+        </button>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
-  export default {
-    name: 'TheNavbarAuthenticated',
-    methods: {
-      logout() {
-        localStorage.removeItem('username');
-        this.$router.push('/login');
-      },
-    }
-  };
+export default {
+  name: 'TheNavbarAuthenticated',
+  methods: {
+    logout() {
+      localStorage.removeItem('username');
+      this.$router.push('/login');
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -64,6 +73,12 @@
   .navbar a {
     color: #ebebeb;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar a i {
+    margin-right: 10px;
   }
 
   .navbar ul li a:hover {

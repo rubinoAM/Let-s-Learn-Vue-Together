@@ -29,7 +29,7 @@ const router = new VueRouter({
           // route to proper authenticated pages if this value isn't null
           next('/app');
         } else {
-          // continue to directed route of "/"
+          // continue to directed route of ""
           next();
         }
       },
@@ -51,7 +51,7 @@ const router = new VueRouter({
           path: '/contact',
           component: ContactPage,
         },
-      ]
+      ],
     },
     {
       path: '/app',
@@ -90,7 +90,7 @@ const router = new VueRouter({
           path: '*',
           component: NotFoundPageAuthenticated,
         },
-      ]
+      ],
     },
     {
       path: '/notauthorized',

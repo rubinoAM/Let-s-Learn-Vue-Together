@@ -3,31 +3,36 @@
     <div class="pricing">
       <h1>PRICING</h1>
       <div class="price-card-list">
-        <PriceCard :tier="'STARTER'" :pricing="'$19'"/>
-        <PriceCard :tier="'PRO'" :pricing="'$59'"/>
-        <PriceCard :tier="'ENTERPRISE'" :pricing="'$99'"/>
+        <PriceCard :tier="'STARTER'" :pricing="'$19'" />
+        <PriceCard :tier="'PRO'" :pricing="'$59'" />
+        <PriceCard :tier="'ENTERPRISE'" :pricing="'$99'" />
       </div>
     </div>
   </transition>
 </template>
 
 <script>
-  import PriceCard from "./PriceCard";
+import PriceCard from './PriceCard';
 
-  export default {
-    name: 'PricingPage',
-    components: {
-      PriceCard
-    }
-  };
+export default {
+  name: 'PricingPage',
+  components: {
+    PriceCard,
+  },
+};
 </script>
 
 <style scoped>
   .pricing {
+    background: #1e272e;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .pricing h1 {
+    color: #fff;
   }
 
   .price-card-list {

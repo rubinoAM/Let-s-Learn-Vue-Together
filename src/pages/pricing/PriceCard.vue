@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="price-card">
     <div class="title">
       <h3>{{ tier }}</h3>
     </div>
@@ -15,12 +15,12 @@ export default {
   props: {
     tier: String,
     pricing: String,
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
-  .card {
+  .price-card {
     height: 300px;
     width: 300px;
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);

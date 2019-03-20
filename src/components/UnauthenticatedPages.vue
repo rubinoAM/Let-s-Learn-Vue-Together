@@ -1,7 +1,7 @@
 <template>
   <div class="unauthenticated-pages">
     <TheNavbarUnauthenticated />
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   components: {
     TheNavbarUnauthenticated,
   },
-}
+};
 </script>
 
 <style scoped>

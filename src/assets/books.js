@@ -1,6 +1,7 @@
 export default [
   {
     id: 1,
+    // eslint-disable-next-line no-script-url
     name: 'JavaScript: The Definitive Guide',
     price: 9.99,
     description:

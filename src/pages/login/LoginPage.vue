@@ -1,15 +1,25 @@
 <template>
-  <div class="login">
-    <form v-on:submit.prevent="login">
-      <div class="form-group">
-        <label for="username">Username</label>
-      <input id="username" type="text" placeholder="Enter username" class="form-control" required v-model="username">
-      </div>
-      <button type="submit" class="btn btn-primary">
-        LOGIN
-      </button>
-    </form>
-  </div>
+  <transition name="fade" mode="out-in">
+    <div class="login">
+      <h1>LOGIN</h1>
+      <form @submit.prevent="login">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            v-model="username"
+            type="text"
+            placeholder="Enter username"
+            class="form-control"
+            required
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">
+          LOGIN
+        </button>
+      </form>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -18,7 +28,7 @@ export default {
   data() {
     return {
       username: '',
-    }
+    };
   },
   methods: {
     login() {
@@ -26,22 +36,35 @@ export default {
       this.$router.push('/app');
     },
   },
-}
+};
 </script>
 
 <style scoped>
   .login {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #1e272e;
+  }
+
+  .login h1 {
+    color: #fff;
   }
 
   .login form {
     height: 200px;
     width: 500px;
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     background-color: #fff;
     padding: 20px;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s ease;
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0;
   }
 </style>

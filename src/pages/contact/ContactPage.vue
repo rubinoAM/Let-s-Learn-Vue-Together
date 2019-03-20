@@ -12,16 +12,21 @@ export default {
   data() {
     return {
       username: '',
-    }
+    };
   },
-}
+};
 </script>
 
 <style scoped>
   .contact {
+    background: #1e272e;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .contact h1, p {
+    color: #fff;
   }
 </style>
